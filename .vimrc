@@ -51,7 +51,7 @@ fun SetupVAM()
    execute ':!git clone --depth=1 git://github.com/MarcWeber/vim-addon-manager'
                 \       shellescape(c.plugin_root_dir.'/vim-addon-manager', 1)
   endif
-  call vam#ActivateAddons(["fugitive","align","The_NERD_Commenter","delimitMate","surround","snipMate","The_NERD_tree","AutomaticLaTeXPlugin","Syntastic","vim-ipython","molokai","Conque_Shell","Python-mode-klen"],{'auto_install' : 1})
+  call vam#ActivateAddons(["cscope","code_complete","fugitive","align","Tagbar","The_NERD_Commenter","delimitMate","surround","snipMate","The_NERD_tree","AutomaticLaTeXPlugin","Syntastic","vim-ipython","molokai","Conque_Shell","Python-mode-klen"],{'auto_install' : 1})
 endfun
 call SetupVAM()
 
