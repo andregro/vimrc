@@ -1,3 +1,4 @@
+let mapleader="\\"
 " Linenumbers and length
 set number
 set tw=79
@@ -31,14 +32,18 @@ set nobackup
 set nowritebackup
 set noswapfile
 
+" Arduino syntax
+au BufRead,BufNewFile *.pde set filetype=arduino
+au BufRead,BufNewFile *.ino set filetype=arduino
+
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
 
 " easier moving of code blocks
 " Try to go into visual mode (v), thenselect several lines of code here and
 " then press ``>`` several times.
-vnoremap < <gv  " better indentation
-vnoremap > >gv  " better indentation
+vnoremap < <gv
+vnoremap > >gv
 
 " Vim Addon Manager for plugin management
 set nocompatible | filetype indent plugin on | syn on
@@ -51,8 +56,12 @@ fun SetupVAM()
    execute ':!git clone --depth=1 git://github.com/MarcWeber/vim-addon-manager'
                 \       shellescape(c.plugin_root_dir.'/vim-addon-manager', 1)
   endif
-  call vam#ActivateAddons(["cscope","code_complete","fugitive","align","Tagbar","The_NERD_Commenter","delimitMate","surround","snipMate","The_NERD_tree","AutomaticLaTeXPlugin","Syntastic","vim-ipython","molokai","Conque_Shell","Python-mode-klen"],{'auto_install' : 1})
+  call vam#ActivateAddons(["ctrlp","powerline","Arduino_syntax_file","vim-arduino","cscope","code_complete","fugitive","align","Tagbar","The_NERD_Commenter","delimitMate","surround","snipMate","The_NERD_tree","AutomaticLaTeXPlugin","Syntastic","vim-ipython","molokai","Conque_Shell","Python-mode-klen","DoxygenToolkit"],{'auto_install' : 1})
 endfun
 call SetupVAM()
 
-
+" vundle
+" youcompleteme
+" vimpowerline
+" ctrlp
+" gundo
