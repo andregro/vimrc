@@ -16,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=10000
+HISTFILESIZE=20000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -85,7 +85,6 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
@@ -112,3 +111,54 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+#### Laden der systemweiten Voreinstellungen #############################
+									##
+if [ -r /usr/local/etc/.bashrc ]					##
+then									##
+   . /usr/local/etc/.bashrc						##
+fi									##
+									##
+##########################################################################
+
+
+
+#### Die folgenden Zeilen duerfen ########################################
+#### nicht veraendert werden. ############################################
+									##
+umask 027								##
+									##
+#PATH="${PATH}:${HOME}/bin:."						##
+PATH="${PATH}:/usr/local/bin:/usr/share/perl/5.18.2/Getopt/Long.pm:."							##
+export PATH								##
+									##
+#MANPATH="${MANPATH}:${HOME}/man"					##
+#export MANPATH								##
+									##
+#LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${HOME}/lib"			##
+#export LD_LIBRARY_PATH							##
+									##
+##########################################################################
+
+
+
+#### Hier wird der Prompt definiert. #####################################
+#### Bei Nichtgefallen aendern. ##########################################
+									##
+#PS1="[\u@\h,\W] "	##DEFAULT
+#
+PS1="\[\033[01;32m\]\$?\$(if [[ \$? == 0 ]]; then echo \"\[\033[01;32m\]\342\234\223\"; else echo \"\[\033[01;31m\]\342\234\227\"; fi)$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]\h'; else echo '\[\033[01;32m\]\u@\h'; fi)\[\033[01;34m\]\w\$\[\033[00m\]"
+export PS1								##
+									##
+##########################################################################
+
+MESA_EXTENSION_OVERRIDE="-GL_EXT_texture_sRGB_decode -GL_ARB_draw_elements_base_vertex -GL_ARB_map_buffer_range"
+export MESA_EXTENSION_OVERRIDE
+### Platz fuer private Definitionen ###
+
+alias su='su -'
+alias ls='ls --color=auto'
+alias ll='ls -la'
+alias slic3r='/home/andregro/Slic3r/slic3r.pl'
+
+stty -ixon -ixoff
