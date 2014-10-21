@@ -49,4 +49,8 @@ alias ll='ls -la'
 
 alias ana='cd /home/andregro/ana-plus/'
 
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
+
 stty -ixon -ixoff

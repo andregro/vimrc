@@ -1,0 +1,7 @@
+[user]
+	name = André Groß
+	email = andregro@students.uni-mainz.de
+[color]
+	ui = true
+[push]
+	default = simple
