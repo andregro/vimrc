@@ -160,4 +160,8 @@ alias su='su -'
 alias ls='ls --color=auto'
 alias ll='ls -la'
 
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
+
 stty -ixon -ixoff
