@@ -1,3 +1,4 @@
+
 let mapleader="\\"
 " Linenumbers and length
 set number
@@ -65,3 +66,10 @@ call SetupVAM()
 " vimpowerline
 " ctrlp
 " gundo
+
+
+" Spell
+autocmd BufNewFile,BufRead *.tex set spell
+syntax spell toplevel
+let g:tex_comment_nospell=1
+set spelllang=de

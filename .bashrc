@@ -159,6 +159,5 @@ export MESA_EXTENSION_OVERRIDE
 alias su='su -'
 alias ls='ls --color=auto'
 alias ll='ls -la'
-alias slic3r='/home/andregro/Slic3r/slic3r.pl'
 
 stty -ixon -ixoff
