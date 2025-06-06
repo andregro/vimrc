@@ -129,7 +129,7 @@ fi									##
 umask 027								##
 									##
 #PATH="${PATH}:${HOME}/bin:."						##
-PATH="${PATH}:/usr/local/bin:/usr/share/perl/5.18.2/Getopt/Long.pm:."							##
+PATH="${PATH}:/usr/local/bin:."							##
 export PATH								##
 									##
 #MANPATH="${MANPATH}:${HOME}/man"					##
